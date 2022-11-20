@@ -1,7 +1,9 @@
-## [Live Preview 💥]()
+## [Live Preview 💥](https://narisha-jewels-48e83.web.app/)
 
 ## Features
-This is an ecommerce website. 
+
+This is an ecommerce website.
+
 ### Built With Server site
 
 - Express.js

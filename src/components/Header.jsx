@@ -85,7 +85,7 @@ const Header = (props) => {
           />
         </div>
         {/* right  */}
-        <div className="flex justify-center item-center">
+        <div className="flex justify-center items-center gap-4">
           <div
             className="relative flex cursor-pointer cart"
             onClick={handleCartButton}
@@ -113,6 +113,51 @@ const Header = (props) => {
             <CartPreview />
           </div>
 
+          {/* Mobile Dropdown */}
+
+          <div className="flex items-center  space-x-2  block md:hidden lg:hidden ">
+            <div className="dropdown ">
+              <button>
+                <ol className="space-y-[-15px] ">
+                  <li
+                    className={
+                      changeHeader
+                        ? "bg-gray-100  p-[3px] rounded-full "
+                        : "bg-indigo-500  p-[3px] rounded-full "
+                    }
+                  ></li>
+                  <li
+                    className={
+                      changeHeader
+                        ? "bg-gray-100  p-[3px] rounded-full "
+                        : "bg-indigo-500  p-[3px] rounded-full "
+                    }
+                  ></li>
+                  <li
+                    className={
+                      changeHeader
+                        ? "bg-gray-100  p-[3px] rounded-full "
+                        : "bg-indigo-500  p-[3px] rounded-full "
+                    }
+                  ></li>
+                </ol>
+              </button>
+              <div class="dropdown-content ">
+                <NavLink
+                  className="text-gray-100 ab"
+                  to={admin ? "/dashboard" : "/myOrders"}
+                >
+                  {admin ? "Dashboard" : "My Order"}
+                </NavLink>
+                <h1
+                  onClick={signOutUser}
+                  className="text-gray-100 ab cursor-pointer hidden"
+                >
+                  Log Out{" "}
+                </h1>
+              </div>
+            </div>
+          </div>
           {user.displayName ? (
             <>
               <div className="flex items-center justify-end space-x-4">
@@ -120,8 +165,8 @@ const Header = (props) => {
                   <button
                     class={
                       changeHeader
-                        ? "text-gray-100 duration-700 hover:scale-105"
-                        : "dropbtn ext-gray-600 duration-700 hover:scale-105"
+                        ? "text-gray-100 duration-700 hover:scale-105 hidden md:block lg:block"
+                        : "dropbtn ext-gray-600 duration-700 hover:scale-105 hidden md:block lg:block"
                     }
                   >
                     {admin ? "Admin" : "Dashboard"}
@@ -161,7 +206,7 @@ const Header = (props) => {
             </>
           ) : (
             <>
-              <div className="flex items-center justify-end space-x-6">
+              <div className="flex items-center justify-end space-x-6 hidden md:block lg:block">
                 <NavLink
                   to="/signup"
                   className={
@@ -173,6 +218,34 @@ const Header = (props) => {
                   Sign Up
                 </NavLink>
               </div>
+
+              {/* <div className="flex items-center justify-end space-x-6 mt-3 block md:hidden lg:hidden">
+                <NavLink to="">
+                  <ol className="space-y-[-15px] ">
+                    <li
+                      className={
+                        changeHeader
+                          ? "bg-gray-100  p-[3px] rounded-full "
+                          : "bg-indigo-500  p-[3px] rounded-full "
+                      }
+                    ></li>
+                    <li
+                      className={
+                        changeHeader
+                          ? "bg-gray-100  p-[3px] rounded-full "
+                          : "bg-indigo-500  p-[3px] rounded-full "
+                      }
+                    ></li>
+                    <li
+                      className={
+                        changeHeader
+                          ? "bg-gray-100  p-[3px] rounded-full "
+                          : "bg-indigo-500  p-[3px] rounded-full "
+                      }
+                    ></li>
+                  </ol>
+                </NavLink>
+              </div> */}
             </>
           )}
         </div>

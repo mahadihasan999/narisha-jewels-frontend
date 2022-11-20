@@ -12,16 +12,20 @@ const CartPreview = () => {
   const { items, isCartOpen } = useContext(CartStateContext);
   const dispatch = useContext(CartDispatchContext);
   const history = useHistory();
+  const cartDispatch = useContext(CartDispatchContext);
 
   const handleRemove = (productId) => {
     return removeFromCart(dispatch, productId);
   };
 
   const handleProceedCheckout = () => {
-    toggleCartPopup(dispatch);
     history.push("/checkouts");
+    toggleCartPopup(dispatch);
   };
-
+  const handleCartButton = (event) => {
+    event.preventDefault();
+    return toggleCartPopup(cartDispatch);
+  };
   return (
     <div className={classNames("cart-preview", { active: isCartOpen })}>
       <ul className="cart-items">
@@ -55,7 +59,11 @@ const CartPreview = () => {
           );
         })}
       </ul>
-      <div className="flex items-center justify-center">
+      <div
+        onClick={handleCartButton}
+        className="
+          flex items-center justify-center"
+      >
         <button
           type="button"
           className={
