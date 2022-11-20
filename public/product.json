@@ -1,0 +1,281 @@
+[
+    {
+        "name": "Matte polished earrings",
+        "price": 550,
+        "image": {
+            "img1": "https://www.linkpicture.com/q/Matte-polished-earrings-550-tk1.jpg",
+            "img2": "https://www.linkpicture.com/q/Matte-polished-earrings-550-tk1_1.jpg"
+        },
+        "key": "Matte polished earrings",
+        "category": "earring"
+    },
+    {
+        "name": "Matte polished earrings",
+        "price": 550,
+        "image": {
+            "img1": "https://www.linkpicture.com/q/Matte-polished-earrings-550-tk2.jpg",
+            "img2": "https://www.linkpicture.com/q/Matte-polished-earrings-550-tk2_1.jpg"
+        },
+        "key": "Matte polished earrings",
+        "category": "earring"
+    },
+    {
+        "name": "Matte polished earrings",
+        "price": 550,
+        "image": {
+            "img1": "https://www.linkpicture.com/q/Matte-polished-earrings-550-tk3.jpg",
+            "img2": "https://www.linkpicture.com/q/Matte-polished-earrings-550-tk3_1.jpg"
+        },
+        "key": "Matte polished earrings",
+        "category": "earring"
+    },
+    {
+        "name": "Meenakari chandbali 700",
+        "price": 700,
+        "image": {
+            "name": "",
+            "img1": "https://www.linkpicture.com/q/Meenakari-chandbali-700-tk.jpg",
+            "img2": "https://www.linkpicture.com/q/Meenakari-chandbali-700-tk_1.jpg"
+        },
+        "key": "MMeenakari chandbali",
+        "category": "earring"
+    },
+    {
+        "name": "Silver Jhumka",
+        "price": 350,
+        "image": {
+            "name": "",
+            "img1": "https://www.linkpicture.com/q/Silver-jhumka-350-tk.jpg",
+            "img2": "https://www.linkpicture.com/q/Silver-jhumka-350-tk_1.jpg"
+        },
+        "key": "Silver Jhumka",
+        "category": "earring"
+    },
+    {
+        "name": "Uncut Earrings with pear",
+        "price": 650,
+        "image": {
+            "name": "",
+            "img1": "https://www.linkpicture.com/q/Uncut-earrings-with-pear-650-tk-4.jpg",
+            "img2": "https://www.linkpicture.com/q/Uncut-earrings-with-pear-650-tk-4_1.jpg"
+        },
+        "key": "Uncut Earrings with pear",
+        "category": "earring"
+    },
+    {
+        "name": "Uncut Earrings with pear",
+        "price": 650,
+        "image": {
+            "name": "",
+            "img1": "https://www.linkpicture.com/q/Uncut-earrings-with-pear-650tk-2.jpg",
+            "img2": "https://www.linkpicture.com/q/Uncut-earrings-with-pear-650tk-2_1.jpg"
+        },
+        "key": "Uncut Earrings with pear",
+        "category": "earring"
+    },
+    {
+        "name": "Uncut Earrings with pear",
+        "price": 650,
+        "image": {
+            "name": "",
+            "img1": "https://www.linkpicture.com/q/Uncut-earrings-with-pear-650tk.jpg",
+            "img2": "https://www.linkpicture.com/q/Uncut-earrings-with-pear-650tk_1.jpg"
+        },
+        "key": "Uncut Earrings with pear",
+        "category": "earring"
+    },
+    {
+        "name": "Uncut Earrings with pear",
+        "price": 650,
+        "image": {
+            "name": "",
+            "img1": "https://www.linkpicture.com/q/Uncut-earrings-with-pearl-650-tk-3.jpg",
+            "img2": "https://www.linkpicture.com/q/Uncut-earrings-with-pearl-650-tk-3_1.jpg"
+        },
+        "key": "Uncut Earrings with pear",
+        "category": "earring"
+    },
+    {
+        "name": "Inspired neckpiece",
+        "price": 1450,
+        "image": {
+            "name": "",
+            "img1": "https://www.linkpicture.com/q/1450-tk_2.jpg",
+            "img2": "https://www.linkpicture.com/q/1450-tk_3.jpg"
+        },
+        "key": "Inspired neckpiece",
+        "category": "necklace"
+    },
+    {
+        "name": "Afgan Inspired neckpiece",
+        "price": 650,
+        "image": {
+            "name": "",
+            "img1": "https://www.linkpicture.com/q/Afghan-inspired-neckpiece-650-tkk_2.jpg",
+            "img2": "https://www.linkpicture.com/q/Afghan-inspired-neckpiece-650-tkk_3.jpg"
+        },
+        "key": "Afgan Inspired neckpiece",
+        "category": "necklace"
+    },
+    {
+        "name": "German silver neckpiece",
+        "price": 300,
+        "image": {
+            "name": "",
+            "img1": "https://www.linkpicture.com/q/German-silver-neckpiece-300-tk_2.jpg",
+            "img2": "https://www.linkpicture.com/q/German-silver-neckpiece-300-tk_3.jpg"
+        },
+        "key": "German silver neckpiece",
+        "category": "necklace"
+    },
+    {
+        "name": "German silver neckpiece",
+        "price": 350,
+        "image": {
+            "name": "",
+            "img1": "https://www.linkpicture.com/q/German-silver-neckpiece350-tkk_2.jpg",
+            "img2": "https://www.linkpicture.com/q/German-silver-neckpiece350-tkk_3.jpg"
+        },
+        "key": "German silver neckpiece",
+        "category": "necklace"
+    },
+    {
+        "name": "Kundon Choker",
+        "price": 720,
+        "image": {
+            "name": "",
+            "img1": "https://www.linkpicture.com/q/Kundon-choker-720-tk_2.jpg",
+            "img2": "https://www.linkpicture.com/q/Kundon-choker-720-tk_3.jpg"
+        },
+        "key": "Kundon Choker",
+        "category": "necklace"
+    },
+    {
+        "name": "Kundon Neckpice",
+        "price": 1080,
+        "image": {
+            "name": "",
+            "img1": "https://www.linkpicture.com/q/Kundon-neckpiec1080-tk_2.jpg",
+            "img2": "https://www.linkpicture.com/q/Kundon-neckpiec1080-tk_3.jpg"
+        },
+        "key": "Kundon Neckpice",
+        "category": "necklace"
+    },
+    {
+        "name": "Kundon Neckpice",
+        "price": 850,
+        "image": {
+            "name": "",
+            "img1": "https://www.linkpicture.com/q/Kundon-neckpiece-850-tk_2.jpg",
+            "img2": "https://www.linkpicture.com/q/Kundon-neckpiece-850-tk_3.jpg"
+        },
+        "key": "Kundon Neckpice",
+        "category": "necklace"
+    },
+    {
+        "name": "Kundon Set",
+        "price": 1150,
+        "image": {
+            "name": "",
+            "img1": "https://www.linkpicture.com/q/Kundon-set-1150-tk_2.jpg",
+            "img2": "https://www.linkpicture.com/q/Kundon-set-1150-tk_3.jpg"
+        },
+        "key": "Kundon Set",
+        "category": "necklace"
+    },
+    {
+        "name": "Kundon Set",
+        "price": 1180,
+        "image": {
+            "name": "",
+            "img1": "https://www.linkpicture.com/q/Kundon-set-1180-tk_2.jpg",
+            "img2": "https://www.linkpicture.com/q/Kundon-set-1180-tk_3.jpg"
+        },
+        "key": "Kundon Set",
+        "category": "necklace"
+    },
+    {
+        "name": "Uncut stone ring",
+        "price": 360,
+        "image": {
+            "name": "",
+            "img1": "https://www.linkpicture.com/q/Uncut-stone-ring-360-tk-1_1.jpg",
+            "img2": "https://www.linkpicture.com/q/Uncut-stone-ring-360-tk-1_2.jpg"
+        },
+        "key": "Uncut stone ring",
+        "category": "ring"
+    },
+    {
+        "name": "Uncut stone ring",
+        "price": 360,
+        "image": {
+            "name": "",
+            "img1": "https://www.linkpicture.com/q/Uncut-stone-ring-360-tk2_1.jpg",
+            "img2": "https://www.linkpicture.com/q/Uncut-stone-ring-360-tk2_2.jpg"
+        },
+        "key": "Uncut stone ring",
+        "category": "ring"
+    },
+    {
+        "name": "Uncut stone ring",
+        "price": 360,
+        "image": {
+            "name": "",
+            "img1": "https://www.linkpicture.com/q/Uncut-stone-ring-360-tk3_1.jpg",
+            "img2": "https://www.linkpicture.com/q/Uncut-stone-ring-360-tk4_2.jpg"
+        },
+        "key": "Uncut stone ring",
+        "category": "ring"
+    },
+    {
+        "name": "Uncut stone ring",
+        "price": 360,
+        "image": {
+            "name": "",
+            "img1": "https://www.linkpicture.com/q/Uncut-stone-ring360-tk1_1.jpg",
+            "img2": "https://www.linkpicture.com/q/Uncut-stone-ring360-tk1_2.jpg"
+        },
+        "key": "Uncut stone ring",
+        "category": "ring"
+    },
+    {
+        "name": "Zircon stone ring",
+        "price": 180,
+        "image": {
+            "name": "",
+            "img1": "https://www.linkpicture.com/q/Zircon-stone-ring-180-tk_1.jpg",
+            "img2": "https://www.linkpicture.com/q/Zircon-stone-ring-180-tk_2.jpg"
+        },
+        "key": "Zircon stone ring",
+        "category": "ring"
+    },
+    {
+        "name": "Zircon stone ring",
+        "price": 220,
+        "image": {
+            "name": "",
+            "img1": "https://www.linkpicture.com/q/Zircon-stone-ring-220-tk_1.jpg",
+            "img2": "https://www.linkpicture.com/q/Zircon-stone-ring-220-tk_2.jpg"
+        },
+        "key": "Zircon stone ring",
+        "category": "ring"
+    },
+    {
+        "name": "Zircon stone ring",
+        "price": 250,
+        "image":"https://www.linkpicture.com/q/Zircon-stone-ring-250-tk_2.jpg",
+     
+        "key": "Zircon stone ring",
+        "category": "ring"
+    },
+    {
+        "name": "Zircon stone ring",
+        "price": 150,
+        "image": 
+           
+            "https://www.linkpicture.com/q/Zircon-stone-ring150-tk_2.jpg"
+    ,
+        "key": "Zircon stone ring",
+        "category": "ring"
+    }
+]
