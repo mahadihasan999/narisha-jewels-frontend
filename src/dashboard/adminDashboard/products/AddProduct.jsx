@@ -11,19 +11,18 @@ import Button from "assets/Form/Button";
 import Heading from "assets/Form/Heading";
 import Select from "react-select";
 import toast, { Toaster } from "react-hot-toast";
-
-const options = [
-  { value: "fingureRing", label: "Finger Ring" },
-  { value: "Earrings", label: "Earrings" },
-  { value: "chain", label: "Chain" },
-  { value: "necklaces", label: "Necklaces" },
-  { value: "angles", label: "Bangles" },
-  { value: "nosepins", label: "Nosepins" },
-  { value: "Saree Pin", label: "Saree Pin" },
-  { value: "kids", label: "Kids" },
-  { value: "top-earpin", label: "Top/Earpin" },
-  { value: "payals-nupur", label: "Payals & Nupur" },
-];
+// const options = [
+//   { value: "fingureRing", label: "Finger Ring" },
+//   { value: "Earrings", label: "Earrings" },
+//   { value: "chain", label: "Chain" },
+//   { value: "necklaces", label: "Necklaces" },
+//   { value: "angles", label: "Bangles" },
+//   { value: "nosepins", label: "Nosepins" },
+//   { value: "Saree Pin", label: "Saree Pin" },
+//   { value: "kids", label: "Kids" },
+//   { value: "top-earpin", label: "Top/Earpin" },
+//   { value: "payals-nupur", label: "Payals & Nupur" },
+// ];
 
 const AddProduct = () => {
   const [title, setTitle] = useState("");
@@ -36,8 +35,7 @@ const AddProduct = () => {
   const [loading, setLoading] = useState();
 
   const key = v4();
-  const [selectedOption, setSelectedOption] = useState(null);
-  const category = selectedOption?.label;
+  const [category, setCategory] = useState(null);
 
   //button loading
 
@@ -79,7 +77,7 @@ const AddProduct = () => {
       date,
     };
 
-    fetch("https://nameless-refuge-09989.herokuapp.com/products", {
+    fetch("https://server-narisha.malihatabassum.com/products", {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -101,24 +99,34 @@ const AddProduct = () => {
         }
       });
   };
-
+  console.log(category);
   return (
     <>
-      <div className="container mx-auto ">
+      <div className="container mx-auto  ">
         <Heading text="Add product" />
         <Toaster></Toaster>
         <form
-          className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 gap-6 mt-4"
+          className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 gap-6 "
           onSubmit={handleSubmit}
         >
           {/* title and description  */}
-          <div className="flex flex-col space-y-2">
+          <div className="flex flex-col space-y-2  ">
             <Label htmlFor="category" text="Category" />
-            <Select
-              defaultValue={selectedOption}
-              onChange={setSelectedOption}
-              options={options}
-            />
+            <select
+              name="category"
+              id="category"
+              value={category}
+              onChange={(e) => setCategory(e.target.value)}
+              className="py-3 px-2"
+            >
+              <option value="fingureRing">Finger Ring</option>
+              <option value="necklaces">Necklaces</option>
+              <option value="nosepins">Nosepins</option>
+              <option value="Saree Pin">Saree Pin</option>
+              <option value="kids">Kids</option>
+              <option value="top-earpin">Top/Earpin</option>
+              <option value="payals-nupur">Payals & Nupur</option>
+            </select>
             <Label htmlFor="title" text="Product Name" />
             <TextField
               id="title"
@@ -187,7 +195,7 @@ const AddProduct = () => {
 
             {/* button  */}
             <div className="mt-10 flex justify-center items-center">
-              <Button text="Update Product" type="submit" />
+              <Button text="Add Product" type="submit" />
             </div>
           </div>
         </form>

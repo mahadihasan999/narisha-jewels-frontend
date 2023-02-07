@@ -3,7 +3,6 @@ import { Link, useParams } from "react-router-dom";
 
 import toast, { Toaster } from "react-hot-toast";
 import SignleProduct from "./SignleProduct";
-
 const ManageProducts = () => {
   const [loading, setLoading] = useState(false);
   const [items, setItems] = useState([]);
@@ -16,11 +15,11 @@ const ManageProducts = () => {
   // const [searchSort] = useState("totalLine");
 
   useEffect(() => {
-    fetch("https://nameless-refuge-09989.herokuapp.com/products")
+    fetch("https://server-narisha.malihatabassum.com/products")
       .then((res) => res.json())
       .then(
         (result) => {
-          setItems(result);
+          setItems(result.products);
         },
         (error) => {}
       );
@@ -29,27 +28,27 @@ const ManageProducts = () => {
   const data = Object.values(items);
 
   function search(data) {
-    if (filterPara == "All") {
+    if (filterPara === "All") {
       items.sort();
     }
-    if (filterPara == "totalLine") {
+    if (filterPara === "totalLine") {
       items.sort((a, b) => {
         return a.totalLine - b.totalLine;
       });
     }
-    if (filterPara == "date") {
+    if (filterPara === "date") {
       items.sort((a, b) => {
         return new Date(b.date) - new Date(a.date);
       });
     }
-    if (filterPara == "dateUpdated") {
+    if (filterPara === "dateUpdated") {
       items.sort((a, b) => {
         return new Date(b.dateUpdated) - new Date(a.dateUpdated);
       });
     }
 
     return data.filter((item) => {
-      if (filterParam == "All") {
+      if (filterParam === "All") {
         return searchParam.some((newItem) => {
           return (
             item[newItem]?.toString().toLowerCase().indexOf(q.toLowerCase()) >
@@ -58,7 +57,7 @@ const ManageProducts = () => {
         });
       }
 
-      if (filterParam == "totalLastCharacter") {
+      if (filterParam === "totalLastCharacter") {
         return searchParamRhy.some((newItem) => {
           return (
             item[newItem]?.toString().toLowerCase().indexOf(q.toLowerCase()) >
@@ -77,7 +76,7 @@ const ManageProducts = () => {
   const handleDeleteProduct = (id) => {
     const proceed = window.confirm("Are you sure, you want to delete?");
     if (proceed) {
-      const url = `https://nameless-refuge-09989.herokuapp.com/products/${id}`;
+      const url = `https://server-narisha.malihatabassum.com/products/${id}`;
       fetch(url, {
         method: "DELETE",
       })
@@ -103,14 +102,14 @@ const ManageProducts = () => {
   }, []);
 
   return (
-    <div className=" h-[100vh]">
+    <div className="h-[100vh]">
       <div className="mx-auto container">
         <Toaster></Toaster>
-        <div className="flex p-4 lg:p-8 flex-col items-center justify-center">
-          <div className="w-full  flex items-center justify-center">
+        <div className="flex p-4 flex-col items-center justify-center">
+          <div className="w-full flex items-center justify-center">
             {/* search bar */}
             <div className=" flex flex-row">
-              <input
+              {/* <input
                 type="search"
                 name="search-form"
                 id="search-form"
@@ -119,9 +118,9 @@ const ManageProducts = () => {
                 value={q}
                 onChange={(e) => setQ(e.target.value)}
               />
-              <span className="sr-only">Search</span>
+              <span className="sr-only">Search</span> */}
 
-              <select
+              {/* <select
                 onChange={(e) => {
                   setFilterParam(e.target.value);
                 }}
@@ -131,7 +130,7 @@ const ManageProducts = () => {
                 <option value="All">All</option>
 
                 <option value="totalLastCharacter">End Rhymes</option>
-              </select>
+              </select> */}
               <span className="focus"></span>
             </div>
           </div>
@@ -145,35 +144,35 @@ const ManageProducts = () => {
           </div>
         ) : (
           <div className="w-full overflow-x-scroll xl:overflow-x-hidden ">
-            <h1 className="text-gray-600  font-semibold pr-2 text-md text-left py-2 tracking-normal leading-4 ">
+            <h1 className="text-gray-700  font-bold font-semibold pr-2 text-md text-left py-2 tracking-normal leading-4 ">
               Total products found {items.length}
             </h1>
             <table className="min-w-full border-2 border-indigo-500 text-center">
               <thead>
                 <tr className="h-16 bg-indigo-500 border py-8 text-center font-bold">
-                  <th className="text-gray-600   font-semibold pr-2 text-sm border tracking-normal leading-4">
+                  <th className="text-gray-100  font-bold  font-semibold pr-2 text-sm border tracking-normal leading-4">
                     Category
                   </th>
-                  <th className=" text-gray-600  font-semibold text-sm border tracking-normal leading-4 border">
+                  <th className=" text-gray-100  font-bold font-semibold text-sm border tracking-normal leading-4 border">
                     Product Image
                   </th>
-                  <th className=" text-gray-600  font-semibold text-sm border tracking-normal leading-4 border ">
+                  <th className=" text-gray-100  font-bold font-semibold text-sm border tracking-normal leading-4 border ">
                     ID
                   </th>
 
-                  <th className="text-gray-600  font-semibold pr-2 text-sm border tracking-normal leading-4">
+                  <th className="text-gray-100  font-bold font-semibold pr-2 text-sm border tracking-normal leading-4">
                     Product Name
                   </th>
-                  <th className="text-gray-600  font-semibold px-2 text-sm border tracking-normal leading-4">
+                  <th className="text-gray-100  font-bold font-semibold px-2 text-sm border tracking-normal leading-4">
                     Price
                   </th>
-                  <th className="text-gray-600  font-semibold px-2 text-sm border tracking-normal leading-4">
+                  <th className="text-gray-100  font-bold font-semibold px-2 text-sm border tracking-normal leading-4">
                     Descriptions
                   </th>
-                  <th className="text-gray-600  font-semibold px-2 text-sm border tracking-normal leading-4">
+                  <th className="text-gray-100  font-bold font-semibold px-2 text-sm border tracking-normal leading-4">
                     Modified
                   </th>
-                  <td className="text-gray-600   font-semibold px-2 text-sm border tracking-normal leading-4">
+                  <td className="text-gray-100  font-bold  font-semibold px-2 text-sm border tracking-normal leading-4">
                     Action
                   </td>
                 </tr>

@@ -1,16 +1,23 @@
 import useAuth from "hooks/useAuth";
 import useOrders from "hooks/useOrders";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import swal from "sweetalert";
 import ModalImage from "react-modal-image";
+import Sub from "./Sub";
 const MyOrder = () => {
-  const [orders, setOrder] = useOrders();
+  const [orders, setOrder] = useState([]);
+
+  useEffect(() => {
+    fetch("https://server-narisha.malihatabassum.com/orders")
+      .then((res) => res.json())
+      .then((data) => setOrder(data));
+  }, []);
   const { user } = useAuth();
 
   const handleDelete = (id) => {
     const proceed = window.confirm("Are you sure want to Delete");
     if (proceed) {
-      const url = `https://nameless-refuge-09989.herokuapp.com/orders/${id}`;
+      const url = `https://server-narisha.malihatabassum.com/orders/${id}`;
       fetch(url, {
         method: "DELETE",
       })
@@ -26,33 +33,31 @@ const MyOrder = () => {
 
   return (
     <div>
-      <div className="my-8 max-w-screen-xl mx-auto px-4 pt-6 lg:pt-6">
-        <div className="flex justify-start item-start flex-col ">
-          <h1 className="text-3xl lg:text-3xl font-semibold leading-7 lg:leading-9  text-gray-800 mt-10">
-            Order Details
+      <div className="max-w-screen-xl mx-auto px-4 pt-6 lg:pt-6 my-4">
+        <div className="flex justify-start item-start flex-col  ">
+          <h1 className="text-3xl lg:text-3xl font-semibold leading-7 lg:leading-9  text-gray-800 ">
+            My Orders
           </h1>
         </div>
         {orders
-          ?.filter((item) => item.email === user.email)
+          ?.filter((item) => item.user === user.email)
           ?.map((item) => (
-            <div className="mt-10 flex flex-col xl:flex-row jusitfy-center items-stretch  w-full xl:space-x-8 space-y-4 md:space-y-6 xl:space-y-0 border-2 border-indigo-500 shadow">
+            <div className="mt-6  flex flex-col xl:flex-row jusitfy-center items-stretch  w-full xl:space-x-8 space-y-4 md:space-y-6 xl:space-y-0 border-2 border-indigo-500 shadow">
               <div className="flex flex-col justify-start items-start w-full space-y-4 md:space-y-6 xl:space-y-8">
                 <div className="flex flex-col justify-start items-start bg-gray-50 px-4 py-4 md:py-6 md:p-6 xl:p-8 w-full">
-                  <div className="flex justify-between gap-5">
-                    <div>
+                  <div className="flex justify-start flex-col gap-5">
+                    <div className="flex justify-between items-center space-x-10 ">
                       <p className="text-lg md:text-xl font-semibold leading-6 xl:leading-5 text-gray-800">
                         Order #{item?._id.slice(18, 31)}
                       </p>
-                      <p className="text-base font-medium leading-6 text-gray-600">
-                        Placed on 05 Sep 2022 22:46:56
-                      </p>
+
+                      <div className="bg-green-200 h-8 w-24 font-semibold rounded-md flex items-center justify-center cursor-pointer">
+                        <span>{item?.order_status}</span>
+                      </div>
                     </div>
-                    {/* <button
-                      onClick={() => handleDelete(item._id)}
-                      className="bg-indigo-500 text-gray-100 px-3 py-2 rounded"
-                    >
-                      Delete
-                    </button> */}
+                    <p className="text-base font-medium leading-6 text-gray-600">
+                      Placed on 05 Sep 2022 22:46:56
+                    </p>
                   </div>
                   {item.items.map((product) => (
                     <div className="mt-2 md:mt-6 flex  flex-col md:flex-row justify-start items-start md:items-center md:space-x-6 xl:space-x-8 w-full ">
@@ -89,44 +94,13 @@ const MyOrder = () => {
                   ))}
                 </div>
                 <div className="flex justify-center md:flex-row flex-col items-stretch w-full space-y-4 md:space-y-0 md:space-x-6 xl:space-x-8">
-                  {}
                   <div className="flex flex-col px-4 py-6 md:p-6 xl:p-8 w-full bg-gray-50 space-y-6   ">
                     <h3 className="text-xl font-semibold leading-5 text-gray-800">
                       Summary
                     </h3>
-                    <div className="flex justify-center items-center w-full space-y-4 flex-col border-gray-200 border-b pb-4">
-                      <div className="flex justify-between  w-full">
-                        <p className="text-base leading-4 text-gray-800">
-                          Quantity
-                        </p>
-                        <p className="text-base leading-4 text-gray-600">
-                          {item?.totalQuantity}
-                        </p>
-                      </div>
-                      <div className="flex justify-between items-center w-full">
-                        <p className="text-base leading-4 text-gray-800">
-                          Subtotal
-                        </p>
-                        <p className="text-base leading-4 text-gray-600">
-                          {item?.subTotal}
-                        </p>
-                      </div>
-                      <div className="flex justify-between items-center w-full">
-                        <p className="text-base leading-4 text-gray-800">
-                          Shipping Charge
-                        </p>
-                        <p className="text-base leading-4 text-gray-600">
-                          {item?.shipping}
-                        </p>
-                      </div>
-                    </div>
-                    <div className="flex justify-between items-center w-full">
-                      <p className="text-base font-semibold leading-4 text-gray-800">
-                        Total
-                      </p>
-                      <p className="text-base font-semibold leading-4 text-gray-600">
-                        {item?.grandTotal}
-                      </p>
+
+                    <div>
+                      <Sub key={item._id} {...item} />
                     </div>
                   </div>
                   <div className="flex flex-col justify-center px-4 py-6 md:p-6 xl:p-8 w-full bg-gray-50 space-y-6   ">
@@ -174,7 +148,8 @@ const MyOrder = () => {
                       <img src={user.photoURL} alt="avatar" />
                       <div className=" flex justify-start items-start flex-col space-y-2">
                         <p className="text-base font-semibold leading-4 text-left text-gray-800">
-                          {item.name}
+                          {item.shippingAddress.name}
+                          {console.log(item)}
                         </p>
                         <p className="text-sm leading-5 bg-green-600 rounded text-gray-100 px-2 ">
                           ✔ Verifed
@@ -204,7 +179,7 @@ const MyOrder = () => {
                         />
                       </svg>
                       <p className="cursor-pointer text-sm leading-5 text-gray-800">
-                        {item.email}
+                        {item.shippingAddress.customerEmail}
                       </p>
                     </div>
                   </div>
@@ -215,7 +190,8 @@ const MyOrder = () => {
                           Shipping Address
                         </p>
                         <p className="w-48 lg:w-full xl:w-48 text-center md:text-left text-sm leading-5 text-gray-600">
-                          {item.address} {item.city}
+                          {item?.shippingAddress?.address} ,
+                          {item?.shippingAddress?.city}, Bangladesh.
                         </p>
                       </div>
                       <div className="flex justify-center md:justify-start  items-center md:items-start flex-col space-y-4 ">
@@ -223,14 +199,10 @@ const MyOrder = () => {
                           Billing Address
                         </p>
                         <p className="w-48 lg:w-full xl:w-48 text-center md:text-left text-sm leading-5 text-gray-600">
-                          {item.address} {item.city}
+                          {item?.shippingAddress?.address} ,
+                          {item?.shippingAddress?.city}, Bangladesh.
                         </p>
                       </div>
-                    </div>
-                    <div className="flex w-full justify-center items-center md:justify-start md:items-start">
-                      <button className="mt-6 md:mt-0 py-5 hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-800 border border-gray-800 font-medium w-96 2xl:w-full text-base leading-4 text-gray-800">
-                        Edit Details
-                      </button>
                     </div>
                   </div>
                 </div>

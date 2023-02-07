@@ -21,8 +21,8 @@ const options = [
   { value: "payals-nupur", label: "Payals & Nupur" },
 ];
 
-const UpdateProducts = () => {
-  const [products, setProducts] = useState({});
+const UpdateBlogs = () => {
+  const [blogs, setBlogs] = useState({});
   const { id } = useParams();
   const history = useHistory();
   const [image, setImageData] = useState();
@@ -30,35 +30,33 @@ const UpdateProducts = () => {
 
   const [selectedOption, setSelectedOption] = useState();
   const category = selectedOption?.label;
-  const categoryData = [
-    { value: "fingureRing", label: `${products.category}` },
-  ];
+  const categoryData = [{ value: "fingureRing", label: `${blogs.category}` }];
 
   const a = [];
   if (typeof category !== "undefined") {
     a.push(category);
   } else {
-    a.push(products.category);
+    a.push(blogs.category);
   }
   const img = [];
 
   if (!image) {
-    img.push(products.image);
+    img.push(blogs.image);
   } else {
     img.push(image);
   }
 
   useEffect(() => {
-    fetch(`https://nameless-refuge-09989.herokuapp.com/products/${id}`)
+    fetch(`https://server-narisha.malihatabassum.com/blogs/${id}`)
       .then((res) => res.json())
-      .then((data) => setProducts(data));
+      .then((data) => setBlogs(data));
   }, [id]);
 
   //track the update
   const handleUpdate = (e) => {
     const { value, name } = e.target;
 
-    setProducts((prev) => {
+    setBlogs((prev) => {
       return {
         ...prev,
         [name]: value,
@@ -69,15 +67,14 @@ const UpdateProducts = () => {
   //handleUpdate
   const handleSubmit = (e) => {
     e.preventDefault();
-    const title = products.title;
-    const price = products.price;
-    const description = products.description;
-    const category = a[0];
+    const title = blogs.title;
+    const summary = blogs.summary;
+    const excerpt = blogs.excerpt;
     const image = img[0];
-    const updateSpot = { category, title, price, description, image };
-
+    const updateSpot = { summary, title, excerpt, image };
+    console.log(updateSpot);
     //update
-    fetch(`https://nameless-refuge-09989.herokuapp.com/products/${id}`, {
+    fetch(`https://server-narisha.malihatabassum.com/blogs/${id}`, {
       method: "PUT",
       headers: {
         "content-type": "application/json",
@@ -118,30 +115,34 @@ const UpdateProducts = () => {
     <div className="mx-4 ">
       <Toaster></Toaster>
       <div className="container mx-auto ">
-        <Heading text="Update product" />
+        <Heading text="Update Blog" />
         <form
           className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 gap-6 mt-4"
           onSubmit={handleSubmit}
         >
           {/* title and description  */}
           <div className="flex flex-col space-y-2">
-            <Label htmlFor="category" text="Category" />
-            <Select
-              value={selectedOption ? selectedOption : categoryData}
-              onChange={setSelectedOption}
-              options={options}
-            />
-
-            <Label htmlFor="title" text="Product Name" />
+            <Label htmlFor="title" text="Blog Name" />
             <TextField
               id="title"
               type="text"
-              defaultValue={products.title}
-              value={products.title}
+              defaultValue={blogs.title}
+              name="title"
               onChange={handleUpdate}
               required
             />
 
+            {/* Summary  */}
+            <Label htmlFor="Summary" text="Summary" />
+            <TextField
+              cols="30"
+              rows="4"
+              className="border border-gray-200 rounded-lg py-3 px-4 w-full focus:outline-none ring-red-200 transition duration-500 focus:ring-4 resize-none"
+              required
+              defaultValue={blogs.summary}
+              name="summary"
+              onChange={handleUpdate}
+            />
             {/* description  */}
             <Label htmlFor="description" text="Description" />
             <TextField
@@ -150,22 +151,22 @@ const UpdateProducts = () => {
               rows="4"
               className="border border-gray-200 rounded-lg py-3 px-4 w-full focus:outline-none ring-red-200 transition duration-500 focus:ring-4 resize-none"
               required
-              defaultValue={products.description}
-              value={products.description}
+              defaultValue={blogs.excerpt}
+              name="excpert"
               onChange={handleUpdate}
             />
           </div>
 
           <div className="flex flex-col space-y-2">
-            <Label htmlFor="Price" text="Price" />
+            {/* <Label htmlFor="Price" text="Price" />
             <TextField
               id="Price"
               type="text"
-              value={products.price}
-              defaultValue={products.price}
+              value={blogs.price}
+              defaultValue={blogs.price}
               onChange={handleUpdate}
               required
-            />
+            /> */}
             <div className="pt-3 flex gap-2 items-center justify-start">
               <span
                 required
@@ -194,8 +195,8 @@ const UpdateProducts = () => {
                 ""
               ) : (
                 <img
-                  src={products.image}
-                  alt="product-images"
+                  src={blogs.image}
+                  alt="Blog-images"
                   height={64}
                   width={48}
                 />
@@ -204,7 +205,7 @@ const UpdateProducts = () => {
 
             {/* button  */}
             <div className="mt-10 flex justify-center items-center">
-              <Button text="Update Product" type="submit" />
+              <Button text="Update Blog" type="submit" />
             </div>
           </div>
         </form>
@@ -213,4 +214,4 @@ const UpdateProducts = () => {
   );
 };
 
-export default UpdateProducts;
+export default UpdateBlogs;

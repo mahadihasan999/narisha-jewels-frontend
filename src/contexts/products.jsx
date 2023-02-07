@@ -53,14 +53,15 @@ export const getProducts = (dispatch) => {
     type: "GET_PRODUCTS_REQUEST",
   });
   // const url = process.env.PRODUCT_API;
-  const url = "https://nameless-refuge-09989.herokuapp.com/products";
+  const url = "https://server-narisha.malihatabassum.com/products";
+
   axios
     .get(url)
     .then((response) => {
       dispatch({
         type: "GET_PRODUCTS_SUCCESS",
         payload: {
-          products: response?.data,
+          products: response?.data.products,
         },
       });
     })

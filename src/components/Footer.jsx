@@ -9,9 +9,11 @@ const Footer = () => {
           <div className="flex flex-col flex-shrink-0">
             <div>
               <NavLink to="/">
-                <span className="font-bold text-indigo-100 text-2xl duration-700 hover:scale-105">
-                  Narisha Jewels
-                </span>
+                <img
+                  src="https://res.cloudinary.com/dhucdoev3/image/upload/v1675679879/new_logo-3_henozd.png"
+                  alt=""
+                  className="h-12"
+                />
               </NavLink>
             </div>
             <p className="text-sm leading-none text-gray-100  mt-4">
@@ -91,19 +93,19 @@ const Footer = () => {
             <h2 className="text-base font-semibold leading-4 text-gray-100 ">
               Company
             </h2>
-            <p className="hover:text-gray-500 text-base leading-4 mt-6 text-gray-100  cursor-pointer">
+            <p className="hover:text-gray-100 text-base leading-4 mt-6 text-gray-100  cursor-pointer">
               Blog
             </p>
-            <p className="hover:text-gray-500 text-base leading-4 mt-6 text-gray-100  cursor-pointer">
+            <p className="hover:text-gray-100 text-base leading-4 mt-6 text-gray-100  cursor-pointer">
               Pricing
             </p>
-            <p className="hover:text-gray-500 text-base leading-4 mt-6 text-gray-100  cursor-pointer">
+            <p className="hover:text-gray-100 text-base leading-4 mt-6 text-gray-100  cursor-pointer">
               About Us
             </p>
-            <p className="hover:text-gray-500 text-base leading-4 mt-6 text-gray-100  cursor-pointer">
+            <p className="hover:text-gray-100 text-base leading-4 mt-6 text-gray-100  cursor-pointer">
               Contact us
             </p>
-            <p className="hover:text-gray-500 text-base leading-4 mt-6 text-gray-100  cursor-pointer">
+            <p className="hover:text-gray-100 text-base leading-4 mt-6 text-gray-100  cursor-pointer">
               Testimonials
             </p>
           </div>
@@ -111,16 +113,16 @@ const Footer = () => {
             <h2 className="text-base font-semibold leading-4 text-gray-100 ">
               Support
             </h2>
-            <p className="hover:text-gray-500 text-base leading-4 mt-6 text-gray-100  cursor-pointer">
+            <p className="hover:text-gray-100 text-base leading-4 mt-6 text-gray-100  cursor-pointer">
               Legal policy
             </p>
-            <p className="hover:text-gray-500 text-base leading-4 mt-6 text-gray-100  cursor-pointer">
+            <p className="hover:text-gray-100 text-base leading-4 mt-6 text-gray-100  cursor-pointer">
               Status policy
             </p>
-            <p className="hover:text-gray-500 text-base leading-4 mt-6 text-gray-100  cursor-pointer">
+            <p className="hover:text-gray-100 text-base leading-4 mt-6 text-gray-100  cursor-pointer">
               Privacy policy
             </p>
-            <p className="hover:text-gray-500 text-base leading-4 mt-6 text-gray-100  cursor-pointer">
+            <p className="hover:text-gray-100 text-base leading-4 mt-6 text-gray-100  cursor-pointer">
               Terms of service
             </p>
           </div>
@@ -135,7 +137,7 @@ const Footer = () => {
                 placeholder="Enter your email"
               />
               <svg
-                className="mr-4 fill-current text-gray-100  hover:text-gray-500"
+                className="mr-4 fill-current text-gray-100  hover:text-gray-100"
                 width="16"
                 height="17"
                 viewBox="0 0 16 17"
@@ -162,7 +164,7 @@ const Footer = () => {
             />
             <div className="cursor-pointer mr-4 cursor-pointer relative z-40">
               <svg
-                className="fill-current text-gray-100  hover:text-gray-500"
+                className="fill-current text-gray-100  hover:text-gray-100"
                 width="16"
                 height="17"
                 viewBox="0 0 16 17"

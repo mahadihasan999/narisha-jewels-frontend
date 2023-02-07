@@ -50,7 +50,7 @@ const useFirebase = () => {
 
   const saveUser = (email, displayName, method) => {
     const user = { email, displayName };
-    fetch("https://nameless-refuge-09989.herokuapp.com/users", {
+    fetch("https://server-narisha.malihatabassum.com/users", {
       method: method,
       headers: {
         "content-type": "application/json",
@@ -60,7 +60,7 @@ const useFirebase = () => {
   };
 
   useEffect(() => {
-    fetch(`https://nameless-refuge-09989.herokuapp.com/users/${user.email}`)
+    fetch(`https://server-narisha.malihatabassum.com/users/${user.email}`)
       .then((res) => res.json())
       .then((data) => setAdmin(data.admin));
   }, [user.email]);

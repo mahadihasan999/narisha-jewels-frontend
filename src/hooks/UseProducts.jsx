@@ -3,7 +3,7 @@ const useProducts = () => {
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
-    fetch("https://nameless-refuge-09989.herokuapp.com/products")
+    fetch("https://server-narisha.malihatabassum.com/products")
       .then((res) => res.json())
       .then((data) => setProducts(data.products));
   }, [products]);

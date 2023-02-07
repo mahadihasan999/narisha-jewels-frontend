@@ -1,16 +1,15 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const SignleProduct = ({
+const SingleBlogs = ({
   _id,
   index,
   title,
   image,
-  price,
-  category,
   description,
-  dateInserted,
-  dateModifeid,
+  summary,
+  excerpt,
+
   date,
   key,
   lastUpdated,
@@ -18,9 +17,6 @@ const SignleProduct = ({
 }) => {
   return (
     <tr className="h-24 border-indigo-400  border">
-      <td className="text-sm px-2 whitespace-no-wrap text-gray-800  tracking-normal leading-4 text-left  border-indigo-400 border-l px-2">
-        {category}
-      </td>
       <td className="">
         <img src={image} alt={image} className="h-20 w-full" />
       </td>
@@ -32,11 +28,9 @@ const SignleProduct = ({
         {title}
       </td>
       <td className="text-sm px-2 whitespace-no-wrap text-gray-800  tracking-normal leading-4 text-left  border-indigo-400 border-l px-2">
-        {price} Tk.
+        {summary?.slice(0, 200)}...
       </td>
-      <td className="text-sm px-2 whitespace-no-wrap text-gray-800  tracking-normal leading-4 text-left  border-indigo-400 border-l px-2">
-        {description}
-      </td>
+
       <td
         key={index}
         className="text-sm px-2 whitespace-no-wrap text-gray-800  tracking-normal leading-4 text-left border-indigo-400 border-l px-2"
@@ -55,7 +49,7 @@ const SignleProduct = ({
 
       <td className="border-indigo-400 border-l ">
         <div className="flex flex-col items-center gap-1 mx-2">
-          <Link to={`/dashboard/update/${_id}`}>
+          <Link to={`/dashboard/blog-update/${_id}`}>
             <h1 className="text-gray-600 dark:text-gray-400 p-2 border-transparent border bg-gray-100 dark:bg-gray-700 dark:hover:bg-gray-600 hover:bg-gray-200 cursor-pointer rounded focus:outline-none focus:border-gray-800 focus:shadow-outline-gray">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -108,4 +102,4 @@ const SignleProduct = ({
   );
 };
 
-export default SignleProduct;
+export default SingleBlogs;

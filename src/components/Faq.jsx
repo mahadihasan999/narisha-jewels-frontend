@@ -22,12 +22,12 @@ const Faq = () => {
       <div className=" flex md:flex-row flex-col md:space-x-8 md:mt-16 mt-8">
         <div className=" md:w-5/12 lg:w-4/12 w-full ">
           <img
-            src="https://www.linkpicture.com/q/IMG-20220308-WA0018_1.jpg"
+            src="https://www.celtic-weddingrings.com/img/cms/jewelry-faq.jpg"
             alt="Img of Glass bottle"
             className="w-full md:block hidden border-normal border-4 border-indigo-500 hover:rounded-lg shdaow"
           />
           <img
-            src="https://www.linkpicture.com/q/IMG-20220308-WA0018_1.jpg"
+            src="https://www.celtic-weddingrings.com/img/cms/jewelry-faq.jpg"
             alt="Img of Glass bottle"
             className="w-full md:hidden block "
           />

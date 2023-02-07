@@ -1,8 +1,9 @@
+import { addToCart, CartDispatchContext } from "contexts/cart";
 import React, { useState, useContext } from "react";
-import { CartDispatchContext, addToCart } from "../contexts/cart";
+
 import "react-inner-image-zoom/lib/InnerImageZoom/styles.css";
 import ModalImage from "react-modal-image";
-const ProductCard = (data) => {
+const PropertiesProductCard = (data) => {
   const [isAdded, setIsAdded] = useState(false);
   const dispatch = useContext(CartDispatchContext);
   const { image, title, price } = data;
@@ -18,7 +19,7 @@ const ProductCard = (data) => {
 
   return (
     <section className="flex justify-center items-center">
-      <div className="w-80 rounded shadow my-3 bg-gray-100">
+      <div className="w-80 rounded shadow my-3">
         <div className=" w-full  flex flex-col justify-between p-4  bg-center ">
           <ModalImage small={image} large={image} alt={title} />
           <div className="flex justify-end mt-[-28px] mx-2">
@@ -65,7 +66,7 @@ const ProductCard = (data) => {
   );
 };
 
-export default ProductCard;
+export default PropertiesProductCard;
 
 /* <div className="product">
       <div className="product-image">

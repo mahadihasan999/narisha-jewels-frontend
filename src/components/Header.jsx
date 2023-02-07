@@ -8,11 +8,10 @@ import {
 } from "../contexts/cart";
 import { CommonDispatchContext, setSearchKeyword } from "../contexts/common";
 import CartPreview from "../components/CartPreview";
-
 import { BsCart2 } from "react-icons/bs";
-import { FiLogOut } from "react-icons/fi";
 import useAuth from "hooks/useAuth";
 import { useState } from "react";
+
 const Header = (props) => {
   const { items: cartItems, isCartOpen } = useContext(CartStateContext);
   const commonDispatch = useContext(CommonDispatchContext);
@@ -47,7 +46,6 @@ const Header = (props) => {
 
   //change header by scrolling
   window.addEventListener("scroll", onChangeHeader);
-
   const fullName = user?.displayName;
   const splitOnSpace = fullName?.split(" ");
   const first = splitOnSpace?.[0];
@@ -188,7 +186,7 @@ const Header = (props) => {
                 </div>
 
                 <img
-                  src={user?.photoURL}
+                  src="https://t4.ftcdn.net/jpg/00/65/77/27/360_F_65772719_A1UV5kLi5nCEWI0BNLLiFaBPEkUbv5Fv.jpg"
                   alt={user.displayName}
                   className="w-10 h-10 rounded-full hidden lg:block md:block"
                 />
@@ -255,80 +253,3 @@ const Header = (props) => {
 };
 
 export default Header;
-// <header>
-//     <div className="container">
-//       <div className="">
-//         <Link to="/">
-//           <h1 className="text-2xl font-bold">Narisha Jewels</h1>
-//         </Link>
-//       </div>
-
-//       <div className="search">
-//         <form>
-//           <div class="flex">
-//             <div class="relative w-full">
-//               <input
-//                 type="search"
-//                 id="search-dropdown"
-//                 class="block p-2.5 w-full z-20 text-sm text-gray-900 bg-gray-50 rounded-lg border-l-gray-50 border-l-2 border border-gray-300 focus:ring-indigo-500 focus:border-indigo-500 dark:bg-gray-70 dark:border-l-gray-700  dark:border-gray-600  dark:text-gray dark:focus:border-indigo-500"
-//                 placeholder="Search products"
-//                 required=""
-//                 onChange={handleSearchInput}
-//               />
-//             </div>
-//           </div>
-//         </form>
-//       </div>
-
-//       {/* cart preview */}
-//       <div className="cart mt-1 mr-2">
-//         <div className="" onClick={handleCartButton}>
-//           <div className="relative flex cursor-pointer ">
-//             {cartQuantity ? (
-//               <span className="bg-indigo-500 w-6 h-6 rounded-full flex items-center justify-center text-white poppins absolute -right-2 -top-2 animate-bounce">
-//                 {cartQuantity}
-//               </span>
-//             ) : (
-//               ""
-//             )}
-
-//             <BsCart2 className="cursor-pointer w-6 h-6 text-gray-700 " />
-//           </div>
-//         </div>
-
-//         <CartPreview />
-//       </div>
-
-//       {user.displayName ? (
-//         <>
-//           <NavLink
-//             to="/dashboard"
-//             onClick={() => setshow(!show)}
-//             className="rounded-md flex space-x-1  font-normal text-sm leading-3 text-indigo-700 bg-white  focus:outline-none focus:bg-gray-200 hover:bg-gray-200 duration-150 justify-center items-center px-2"
-//           >
-//             Dashboard
-//           </NavLink>
-//         </>
-//       ) : (
-//         <>
-//           <NavLink
-//             to="/signin"
-//             onClick={() => setshow(!show)}
-//             className="rounded-md flex space-x-1  duration-150 justify-center items-center"
-//           >
-//             <button class="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-1 px-4 mx-2 border border-gray-400 rounded shadow">
-//               Login
-//             </button>
-//           </NavLink>
-//         </>
-//       )}
-
-//       {user.displayName ? (
-//         <button onClick={signOutUser} class=" py-1 ">
-//           <img src="https://img.icons8.com/ios-glyphs/30/null/logout-rounded-down.png" />
-//         </button>
-//       ) : (
-//         ""
-//       )}
-//     </div>
-//   </header>

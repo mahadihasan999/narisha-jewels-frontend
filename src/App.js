@@ -12,14 +12,21 @@ import CommonLayout from "./layouts/CommonLayout";
 import AuthPage from "./pages/auth";
 import Home from "./pages/home";
 import "../src/assets/scss/style.scss";
-import AddProduct from "dashboard/adminDashboard/AddProduct";
+import AddProduct from "dashboard/adminDashboard/products/AddProduct";
 import Header from "components/Header";
 import Checkouts from "pages/Checkouts";
 import Dashboard from "dashboard/Dashboard";
 import HomeScreen from "pages/HomeScreen";
 import Register from "pages/Register";
 import SignIn from "pages/SignIn";
-import MyOrder from "pages/MyOrder";
+import MyOrder from "dashboard/userDashboard/MyOrder";
+import Payment from "pages/Payment";
+import Navbar from "components/Navbar";
+import BlogDetails from "components/blog/BlogDetails";
+import Properties from "components/properties/Properties";
+import { FloatingWhatsApp } from "react-floating-whatsapp";
+import Blogs from "components/blog/Blogs";
+import About from "components/About";
 
 const App = () => {
   return (
@@ -29,7 +36,12 @@ const App = () => {
           <CartProvider>
             <CheckoutProvider>
               <Router>
-                <Header></Header>
+                <Navbar />
+                <FloatingWhatsApp
+                  phoneNumber="+8801757044229"
+                  avatar="https://res.cloudinary.com/dhucdoev3/image/upload/v1675453177/9463fc20-24e6-400f-8a4f-64d136552566_adfqil.jpg"
+                  accountName="Narisha Jewels"
+                />
                 <Switch>
                   {/* <RouteWrapper
                     path="/"
@@ -50,20 +62,33 @@ const App = () => {
                   <Route exact path="/" layout={CommonLayout}>
                     <HomeScreen></HomeScreen>
                   </Route>
-                  <Route exact path="/signup" layout={CommonLayout}>
+                  <Route path="/properties" layout={CommonLayout}>
+                    <Properties />
+                  </Route>
+                  <Route path="/blog-s" layout={CommonLayout}>
+                    <Blogs />
+                  </Route>
+                  <Route path="/about" layout={CommonLayout}>
+                    <About />
+                  </Route>
+                  <Route path="/signup" layout={CommonLayout}>
                     <Register />
                   </Route>
-                  <Route exact path="/signin" layout={CommonLayout}>
+                  <Route path="/blogs/:id" layout={CommonLayout}>
+                    <BlogDetails />
+                  </Route>
+
+                  <Route path="/signin" layout={CommonLayout}>
                     <SignIn />
                   </Route>
-                  <Route exact path="/checkouts" layout={CommonLayout}>
+                  <Route path="/payment-gateway" layout={CommonLayout}>
+                    <Payment />
+                  </Route>
+                  <Route path="/checkouts" layout={CommonLayout}>
                     <Checkouts />
                   </Route>
-                  <Route exact path="/dashboard" layout={CommonLayout}>
+                  <Route path="/dashboard" layout={CommonLayout}>
                     <Dashboard />
-                  </Route>
-                  <Route exact path="/myOrders" layout={CommonLayout}>
-                    <MyOrder />
                   </Route>
                 </Switch>
               </Router>

@@ -83,15 +83,14 @@ const clearTheCart = () => {
 
 const AddressStep = (d) => {
   const checkoutDispatch = useContext(CheckoutDispatchContext);
+  const handleSaveAddress = (addressData) => {
+    saveShippingAddress(checkoutDispatch, addressData);
+  };
   const { isLoggedIn, user } = useContext(AuthStateContext);
   const notify = () => toast("Here is your toast.");
   // const handleBackToLogin = () => {
   //   setCheckoutStep(checkoutDispatch, CHECKOUT_STEPS.AUTH);
   // };
-
-  const handleSaveAddress = (addressData) => {
-    saveShippingAddress(checkoutDispatch, addressData);
-  };
 
   return (
     <div className="detail-container">
