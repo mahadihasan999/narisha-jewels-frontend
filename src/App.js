@@ -1,25 +1,17 @@
 import React from "react";
-import CheckoutPage from "./pages/checkout";
 import AuthProvider from "./contexts/AuthProvider";
 import CommonProvider from "./contexts/common";
 import ProductsProvider from "./contexts/products";
 import CartProvider from "./contexts/cart";
 import CheckoutProvider from "./contexts/checkout";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import RouteWrapper from "./layouts/RouteWrapper";
-import AuthLayout from "./layouts/AuthLayout";
 import CommonLayout from "./layouts/CommonLayout";
-import AuthPage from "./pages/auth";
-import Home from "./pages/home";
 import "../src/assets/scss/style.scss";
-import AddProduct from "dashboard/adminDashboard/products/AddProduct";
-import Header from "components/Header";
 import Checkouts from "pages/Checkouts";
 import Dashboard from "dashboard/Dashboard";
 import HomeScreen from "pages/HomeScreen";
 import Register from "pages/Register";
 import SignIn from "pages/SignIn";
-import MyOrder from "dashboard/userDashboard/MyOrder";
 import Payment from "pages/Payment";
 import Navbar from "components/Navbar";
 import BlogDetails from "components/blog/BlogDetails";
@@ -43,22 +35,6 @@ const App = () => {
                   accountName="Narisha Jewels"
                 />
                 <Switch>
-                  {/* <RouteWrapper
-                    path="/"
-                    exact
-                    component={Home}
-                    layout={CommonLayout}
-                  />
-                  <RouteWrapper
-                    path="/checkout"
-                    component={CheckoutPage}
-                    layout={CommonLayout}
-                  />
-                  <RouteWrapper
-                    path="/auth"
-                    component={AuthPage}
-                    layout={AuthLayout}
-                  /> */}
                   <Route exact path="/" layout={CommonLayout}>
                     <HomeScreen></HomeScreen>
                   </Route>
